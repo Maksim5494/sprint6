@@ -1,0 +1,27 @@
+package manager;
+
+import model.Task;
+
+import java.util.ArrayList;
+
+public class InMemoryHistoryManager implements HistoryManager{
+
+   private ArrayList<Task> historyTask = new ArrayList<>(10);
+
+   @Override
+    public ArrayList<Task> getHistory() {
+        return historyTask;
+    }
+    // получить список истории
+
+    @Override
+    public void add(Task task) {
+    if (historyTask.size()<10) {
+        historyTask.add(task);
+    } else {
+        historyTask.remove(0);
+        historyTask.add(task);
+    }
+    }
+
+}
