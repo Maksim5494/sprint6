@@ -1,7 +1,6 @@
 package manager;
 
 import model.Task;
-
 import java.util.ArrayList;
 
 public class InMemoryHistoryManager implements HistoryManager{
@@ -12,7 +11,6 @@ public class InMemoryHistoryManager implements HistoryManager{
     public ArrayList<Task> getHistory() {
         return historyTask;
     }
-    // получить список истории
 
     @Override
     public void add(Task task) {
@@ -23,5 +21,4 @@ public class InMemoryHistoryManager implements HistoryManager{
         historyTask.add(task);
     }
     }
-
 }

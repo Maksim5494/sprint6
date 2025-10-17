@@ -26,7 +26,6 @@ public class Main {
         System.out.println(taskManager.getTasks());
         System.out.println();
 
-
         System.out.println("удаляем таску");
         taskManager.deleteTask(taskForUpdate.getId());
         System.out.println(taskManager.getTasks());
