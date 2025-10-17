@@ -3,7 +3,6 @@ package manager;
 import model.Epic;
 import model.Subtask;
 import model.Task;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +11,6 @@ public class InMemoryTaskManager implements TaskManager {
     private HashMap<Long, Task> tasks = new HashMap<>();
     private HashMap<Long, Epic> epics = new HashMap<>();
     private HashMap<Long, Subtask> subtasks = new HashMap<>();
-
     private long generatorId = 1;
     private final HistoryManager historyManager = Managers.getDefaultHistory();
 
@@ -39,6 +37,7 @@ public class InMemoryTaskManager implements TaskManager {
 
     @Override
     public ArrayList<Task> getTasks() {
+
         return new ArrayList<>(tasks.values());
     }
 
@@ -57,11 +56,13 @@ public class InMemoryTaskManager implements TaskManager {
 
     @Override
     public Task deleteTask(long id) {
+
         return tasks.remove(id);
     }
 
     @Override
     public void deleteTasks() {
+
         tasks.clear();
     }
 
