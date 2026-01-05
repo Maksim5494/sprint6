@@ -1,12 +1,6 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*; // Используем современные ассерты JUnit 5
 import ru.yandex.practicum.gym.*;
-import org.junit.jupiter.api.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
 import java.util.*;
 
 public class TimetableTest {
@@ -35,13 +29,11 @@ public class TimetableTest {
     @Test
     void testGetTrainingSessionsForDayMultipleSessions() {
         Timetable timetable = new Timetable();
-
         Coach coach = new Coach("Васильев", "Николай", "Сергеевич");
 
         Group groupAdult = new Group("Акробатика для взрослых", Age.ADULT, 90);
         TrainingSession thursdayAdultTrainingSession = new TrainingSession(groupAdult, coach,
                 DayOfWeek.THURSDAY, new TimeOfDay(20, 0));
-
         timetable.addNewTrainingSession(thursdayAdultTrainingSession);
 
         Group groupChild = new Group("Акробатика для детей", Age.CHILD, 60);

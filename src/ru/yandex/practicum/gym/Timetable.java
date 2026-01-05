@@ -14,7 +14,9 @@ public class Timetable {
         if (!timetable.containsKey(day)) {
             timetable.put(day, new ArrayList<>());
         }
-        timetable.get(day).add(trainingSession);
+        List<TrainingSession> sessions = timetable.get(day);
+        sessions.add(trainingSession);
+        sessions.sort(Comparator.comparing(TrainingSession::getTimeOfDay));
     }
     //проверка списка занятий, если нет add новый список и add занятие or yes, то add занятие в существ. список
 
