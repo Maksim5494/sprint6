@@ -1,5 +1,3 @@
-package ru.yandex.practicum.gym;
-
 import java.util.Objects;
 
 public class TimeOfDay implements Comparable<TimeOfDay> {
