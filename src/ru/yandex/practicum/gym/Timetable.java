@@ -12,7 +12,9 @@ public class Timetable {
         if (!timetable.containsKey(day)) {
             timetable.put(day, new ArrayList<>());
         }
-        timetable.get(day).add(trainingSession);
+        List<TrainingSession> sessions = timetable.get(day);
+        sessions.add(trainingSession);
+        sessions.sort(Comparator.comparing(TrainingSession::getTimeOfDay));
     }
     
     public List<TrainingSession> getTrainingSessionsForDay(DayOfWeek dayOfWeek) {  // возвращаем список занятий на указанный день недели
@@ -49,3 +51,4 @@ public class Timetable {
                         LinkedHashMap::new ));
     }
 }
+
