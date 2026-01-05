@@ -46,7 +46,7 @@ public class Timetable {
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
                         Map.Entry::getValue,
-                        (oldValue, newValue) -> oldValue, LinkedHashMap::new ));
+                    (oldValue, newValue) -> oldValue, LinkedHashMap::new));
     }
 }
 
