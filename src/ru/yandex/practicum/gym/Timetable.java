@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 public class Timetable {
 
     private Map<DayOfWeek, List<TrainingSession>> timetable = new HashMap<>(); // ключ - день недели, значение - список занятий на этот день.
-    
     public void addNewTrainingSession(TrainingSession trainingSession) { //проверка списка занятий, если нет add новый список и add занятие or yes, то add занятие в существ. список
         DayOfWeek day = trainingSession.getDayOfWeek();
         if (!timetable.containsKey(day)) {
@@ -16,7 +15,6 @@ public class Timetable {
         sessions.add(trainingSession);
         sessions.sort(Comparator.comparing(TrainingSession::getTimeOfDay));
     }
-    
     public List<TrainingSession> getTrainingSessionsForDay(DayOfWeek dayOfWeek) {  // возвращаем список занятий на указанный день недели
         return timetable.getOrDefault(dayOfWeek, new ArrayList<>());
     }  
@@ -30,17 +28,14 @@ public class Timetable {
         }
         return result;
     }
-    
     public Map<Coach, Integer> getCountByCoaches() {
         Map<Coach, Integer> countByCoaches = new HashMap<>();
-
         for (List<TrainingSession> sessions : timetable.values()) {
             for (TrainingSession session : sessions) {
                 Coach coach = session.getCoach();
                 countByCoaches.put(coach, countByCoaches.getOrDefault(coach, 0) + 1);
             }
         }
-
         return countByCoaches.entrySet()
                 .stream()
                 .sorted(Map.Entry.<Coach, Integer>comparingByValue().reversed())
