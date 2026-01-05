@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
 import java.util.*;
 
 public class TimetableTest {
@@ -30,7 +28,6 @@ public class TimetableTest {
         List<TrainingSession> tuesdaySessions = timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY);
         assertTrue(tuesdaySessions.isEmpty());
     }
-
 
     @Test
     void testGetTrainingSessionsForDayMultipleSessions() {
@@ -70,8 +67,7 @@ public class TimetableTest {
         List<TrainingSession> tuesdaySessions = timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY);
         assertTrue(tuesdaySessions.isEmpty());
     }
-
-
+    
     @Test
     void testGetTrainingSessionsForDayAndTime() {
         Timetable timetable = new Timetable();
@@ -137,5 +133,4 @@ public class TimetableTest {
         assertEquals(1, countByCoaches.size());
         assertEquals(2, (int) countByCoaches.get(coach));
     }
-
 }
