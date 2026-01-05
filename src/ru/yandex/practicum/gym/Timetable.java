@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Timetable {
 
     private Map<DayOfWeek, List<TrainingSession>> timetable = new HashMap<>(); // ключ - день недели, значение - список занятий на этот день.
-    
+
     public void addNewTrainingSession(TrainingSession trainingSession) {
         DayOfWeek day = trainingSession.getDayOfWeek();
         if (!timetable.containsKey(day)) {
