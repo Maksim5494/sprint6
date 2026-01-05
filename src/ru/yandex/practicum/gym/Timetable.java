@@ -16,11 +16,11 @@ public class Timetable {
         sessions.add(trainingSession);
         sessions.sort(Comparator.comparing(TrainingSession::getTimeOfDay));
     }
-    
+
     public List<TrainingSession> getTrainingSessionsForDay(DayOfWeek dayOfWeek) {  // возвращаем список занятий на указанный день недели
         return timetable.getOrDefault(dayOfWeek, new ArrayList<>());
     }
-    
+
     public List<TrainingSession> getTrainingSessionsForDayAndTime(DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
         List<TrainingSession> sessionsForDay = getTrainingSessionsForDay(dayOfWeek);
         List<TrainingSession> result = new ArrayList<>();
@@ -31,7 +31,7 @@ public class Timetable {
         }
         return result;
     }
-    
+
     public Map<Coach, Integer> getCountByCoaches() {
         Map<Coach, Integer> countByCoaches = new HashMap<>();
         for (List<TrainingSession> sessions : timetable.values()) {
